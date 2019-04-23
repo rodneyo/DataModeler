@@ -1,0 +1,43 @@
+<?php
+/**
+ * Date: 9/29/17
+ * Time: 9:05 AM
+ */
+const APPLICATION_ENV = '--RunTimeEnv---'; // development || testing || production
+const DBUSER = '--DbUser--';
+const DBPASS = '--DbPass--';
+const DBHOST = '--DbHost--';
+const LOG_DIR = '--LogDir--';
+const LOG_HANDLER = '--LogHandler--';  // filesystem || zendserver
+const DATA_MODEL_SHEET = "--PathToGoogleDataSheet--";
+const GOOGLE_SERVICE_ACCOUNT_CREDENDTIALS_JSON = '--PathToJsonCredsForGoogleServiceAccount--';
+const DATA_MODEL_ENTRY_GOOGLE_SHEET_ID = '--GoogleSheetId--';
+const DATA_MODEL_ENTRY_GOOGLE_SHEET_NAME = 'Documentation Tracker';
+const DATA_MODEL_ENTRY_GOOGLE_WORK_SHEET_NAME = 'DB Modeling Entries';
+
+// Runtime configs
+$appConfig = [
+    'dataModelSheet' => DATA_MODEL_SHEET,
+    'logHandler' => LOG_HANDLER,
+    'gSrvcCreds' => GOOGLE_SERVICE_ACCOUNT_CREDENDTIALS_JSON,
+    'dbUser' => DBUSER,
+    'dbPasswd' => DBPASS,
+    'dbHost' => DBHOST,
+    'sheetId' => DATA_MODEL_ENTRY_GOOGLE_SHEET_ID,
+    'sheetName' => DATA_MODEL_ENTRY_GOOGLE_SHEET_NAME,
+    'workSheetName' => DATA_MODEL_ENTRY_GOOGLE_WORK_SHEET_NAME,
+    'select_databases' => [
+        'core',
+        'accounting',
+        'trust',
+        'commission_payroll',
+        'sales_marketing',
+        'ops_admin',
+        'credit_collections',
+        'acquisitions'
+    ]
+];
+
+return [
+    'app' => $appConfig
+];
